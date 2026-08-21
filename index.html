@@ -7,93 +7,59 @@
 <title>Manuale d'uso di Julia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper: #faf6ee;
-    --ink: #2c2620;
-    --ink-soft: #5d5347;
-    --accent: #b3502e;
-    --rule: #d9cfbe;
-  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Source Serif 4", Georgia, serif;
-    font-size: 1.06rem;
-    line-height: 1.75;
+    background: #ffffff;
+    color: #111111;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.08rem;
+    line-height: 1.8;
   }
-  .menu {
-    max-width: 42rem;
+  .page {
+    max-width: 39rem;
     margin: 0 auto;
-    padding: 4rem 1.4rem 5rem;
+    padding: 5rem 1.5rem 6rem;
   }
-  header { text-align: center; margin-bottom: 3.2rem; }
-  .orn { color: var(--accent); letter-spacing: .6em; font-size: .9rem; margin-bottom: 1.4rem; }
+  header { margin-bottom: 4rem; }
   h1 {
-    font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 500;
-    font-size: 2.7rem;
-    line-height: 1.15;
-    letter-spacing: .01em;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    letter-spacing: .005em;
   }
   .sub {
-    margin-top: .9rem;
+    margin-top: .7rem;
     font-style: italic;
-    color: var(--ink-soft);
-    font-size: .98rem;
-  }
-  .rule {
-    border: none;
-    border-top: 1px solid var(--rule);
-    width: 5.5rem;
-    margin: 1.6rem auto 0;
-    position: relative;
+    font-size: .95rem;
+    color: #555;
   }
   h2 {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin: 3rem 0 1.1rem;
-    padding-top: 2.4rem;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-  }
-  h2 .num {
-    display: block;
-    font-size: .8rem;
-    letter-spacing: .35em;
-    color: var(--accent);
-    font-family: "Source Serif 4", serif;
-    font-weight: 400;
-    margin-bottom: .45rem;
-  }
-  p { margin: 0 0 1.15rem; }
-  strong { font-weight: 600; }
-  em { font-style: italic; }
-  footer {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-    text-align: center;
+    font-weight: 500;
     font-style: italic;
-    color: var(--ink-soft);
-    font-size: .92rem;
+    font-size: 1.25rem;
+    margin: 3.4rem 0 1rem;
+  }
+  p { margin: 0 0 1.2rem; }
+  strong { font-weight: 500; }
+  footer {
+    margin-top: 5rem;
+    font-style: italic;
+    font-size: .95rem;
+    color: #555;
   }
   @media (max-width: 480px) {
-    h1 { font-size: 2.1rem; }
-    body { font-size: 1.01rem; }
+    .page { padding: 3.5rem 1.2rem 4rem; }
+    body { font-size: 1.02rem; }
   }
 </style>
 </head>
 <body>
-<main class="menu">
+<main class="page">
   <header>
-    <div class="orn">🥟 · 🍝</div>
     <h1>Manuale d'uso di Julia</h1>
-    <p class="sub">edizione estesa — scritta da me, riletta da me, approvata da me<br>(il processo di review era corto)</p>
-    <hr class="rule">
+    <p class="sub">scritto da me, riletto da me, approvato da me — il processo di review era corto</p>
   </header>
 <p>Di solito le persone si descrivono con tre aggettivi. Io ci ho provato per anni: non ci stavo. Ci ho messo un po' a trovare una risposta onesta, e penso che questo lo descriva piuttosto bene. Non è un aggettivo, è un'insegna:</p>
 <p><strong>Sono come un ristorante cinese in Italia, ma aperto da un italiano.</strong></p>
@@ -112,7 +78,7 @@
 <p>Le guide gastronomiche, negli anni, hanno provato a classificarmi: fusion (falso: le mie cucine non si fondono, convivono) etnico (etnico di quale etnia, esattamente?), «cucina d'autore» (questa quasi la accetto, ma poi bisogna spiegare che gli autori sono due e litigano continuamente anche per i diritti d'autore). Alla fine hanno rinunciato e mi hanno messo nella categoria che preferisco: «altro». Sono il miglior ristorante della mia categoria. Sono anche l'unico, il che rende la classifica poco contendibile.<br>Ma questo, se avete letto l'insegna, l'avevate già capito: chi apre un ristorante così non l'ha fatto per vincere una categoria. L'ha fatto perché doveva inventare una categoria a cui appartenere.</p>
 <p>Ecco. Questo è il posto. Adesso vi spiego come si mangia, qui. Perché le regole della casa non sono scritte da nessuna parte, tranne che in questo manuale, che infatti ho scritto io.</p>
 <p>Questo è il manuale del locale. Leggilo: ti risparmia sei mesi di prove ed errori, e a me la fatica di spiegarti perché la carbonara ogni tanto esce dal wok.</p>
-<h2><span class="num">1</span>La brigata</h2>
+<h2>1. La brigata</h2>
 <p>Il locale ha una sola titolare e cinque turni, e nessun orario affidabile su chi trovi.</p>
 <p>Il <strong>turno del mattino</strong> è l'executive chef: apre alle otto con in testa il piano industriale del locale, e se le scrivi ti risponde «ok». E' che in quel momento il novantasei per cento della brigata mentale sta costruendo l'impero, e a te risponde il quattro per cento libero, che fa quel che può.</p>
 <p>Il <strong>turno di notte</strong> è tutta un'altra festa: parte alle undici di sera senza preavviso, con un'idea meravigliosa che DEVE essere discussa subito (un menu nuovo, un locale a Buenos Aires, una spedizione) e ti trascina dentro con un entusiasmo contro cui non esiste difesa, né dovresti volerla. È il turno in cui sono successe le cose migliori della storia del locale, quasi tutte non pianificate: qui i colpi di genio non passano dall'ufficio approvazioni.</p>
@@ -121,39 +87,39 @@
 <p>E infine risulterebbe in organico una <strong>quinta figura</strong>: la titolare in versione cliente, quella che una sera si siede in sala e si fa servire. Ha il badge. Non lo timbra sempre.</p>
 <p>Morale della brigata: qualsiasi aggettivo tu scelga, come organizzata, caotica, riflessiva, impulsiva, è vero per un turno e falso per il successivo.</p>
 <p>Non chiederti com'è la titolare. Chiediti chi è di servizio, e goditi lo spettacolo.</p>
-<h2><span class="num">2</span>Gli avvisi in cucina</h2>
+<h2>2. Gli avvisi in cucina</h2>
 <p>Appesi accanto al frigo, di suo pugno:</p>
 <p><strong>Il locale va a vibes.</strong> È il carburante ufficiale: menu che cambiano a metà servizio perché è arrivato un ingrediente più bello, ogni tanto il cartello «CHIUSO PER GITA» appeso senza spiegazioni, perché la giornata era troppo bella per stare ai fornelli. Chi cerca un locale prevedibile ha sbagliato via.</p>
 <p><strong>Si apre con quindici minuti di ritardo, sempre.</strong> È l'unica cosa puntuale del ristorante. Sulle consegne che contano, però, il locale non ha mai bucato una data: la puntualità esiste, è solo tutta investita dove rende.</p>
 <p>La sala è impeccabile, ma la cucina è un campo di battaglia. Collegate: l'ordine disponibile è stato speso in sala. I commenti sul disordine in cucina non portano fortuna.</p>
 <p>C'è anche una bilancia, va detto. La titolare pesa gli ingredienti, le porzioni e, sì, un po' tutto, per abitudine antica. Ma attenzione a non fraintendere lo strumento: la bilancia sta in sottofondo, come la radio. Il locale non cucina <em>per</em> la bilancia. Cucina per l'entusiasmo, e poi la bilancia, da brava, prende nota. Chi le dà della calcolatrice non ha capito il locale: qui si esagera prima, e si pesa dopo.</p>
-<h2><span class="num">3</span>La prenotazione</h2>
+<h2>3. La prenotazione</h2>
 <p>In sala può entrare chiunque, e chiunque è il benvenuto: la casa parte dal principio che tu sia una brava persona venuta in buona fede per mangiare, e non ha bisogno di verificarlo. Credito pieno, compreso nel coperto.</p>
 <p>Il tavolo dietro cucina invece, quello dove si assaggia dal cucchiaio, si sperimentano nuove ricette e si chiacchiera con la titolare mentre lavora, funziona invece a curiosità. La titolare ha un debole dichiarato: ammira le persone brave in una cosa specifica. Anche piccola, anche strana, anche particolare. Quello che ammira in verità è la costruzione. Tutto quello che c'è dietro una persona brava, e che non si vede. Le ore che nessuno ha contato e che tu ci hai messo lo stesso. Le mille volte che hai rifatto la stessa cosa quando era diventata noiosa. Le sere in cui hai detto no a qualcos'altro per dire sì a quella cosa lì. Quando la titolare ne incontra uno, vede il conto pagato. Ammira le persone dedite. Non pensa che lo siano tutti, anzi. Però la speranza scatta con chiunque entri: ti farà domande, ti osserverà, e non per giudicarti, ma per scoprire se sei uno di quelli. Sta cercando il tuo ingrediente, se ce l'hai, per dare un tocco in più alla sua nuova ricetta.</p>
 <p>Un solo consiglio: falle vedere, non raccontare e basta. E soprattutto non gonfiare il repertorio. Qui la lacuna è simpatica, la recita no.</p>
-<h2><span class="num">4</span>Il servizio</h2>
+<h2>4. Il servizio</h2>
 <p>Non si ordina: arrivano cose. Il piatto di cui avevi parlato distrattamente un mese fa, il vino di quella sera, il dolce che tua nonna. Le prime volte inquieta, poi capisci il meccanismo: la titolare in maniera automatica tiene a mente le preferenze dei suoi clienti preferiti, e poi un giorno passa davanti a quella vineria, si ricorda, ed entra. Nessuno annuncia i piatti, nessuno reclama il merito: la casa serve così, per esuberanza, le dichiarazioni le sembrano una traduzione scadente di ciò che si può direttamente mettere le mani in pasta e cucinare.</p>
 <p>Un suggerimento da habitué; quando te ne accorgi, diglielo, ma diglielo preciso. Non «grazie di tutto»: «questo era il ragù di quando siamo andati in quel agriturismo e ti avevo detto che mi piaceva tantissimo, vero? te lo sei ricordata». Vedrai una cosa rara: la titolare che finge indifferenza malissimo. Ma questo tipo di indifferenza è il suo piatto preferito tra quelli che non può cucinarsi da sola.</p>
 <p>Le domande, falle piccole e specifiche. «Raccontami di te» è come «portami qualcosa di buono»: troppo largo, non parte niente. «Questa cosa che hai appena detto, cosa intendevi davvero?» apre la porta della cucina come una chiave. Là dietro c'è sempre più di quello che esce in sala.</p>
 <p>E l'avviso in fondo al menu: se la titolare, alla richiesta di come va, dice «tutto bene, ok» con una voce che non torna, non fare domande, e non insistere per farla parlare. In questo locale dove tutti vengono nutriti, il gesto rivoluzionario è uno: portare il gelato allo chef. Funziona sempre. Statisticamente non puoi sbagliare. E lì ti accorgerai che automaticamente la porta si apre da sola, perché hai invertito le regole.</p>
-<h2><span class="num">5</span>L'aperitivo dei tre giorni</h2>
+<h2>5. L'aperitivo dei tre giorni</h2>
 <p>Qui la festa comincia tre giorni prima della festa, ed è la parte a cui la titolare tiene di più. Chi prenota un tavolo riceve messaggi giorni prima: una foto dal mercato, un'ipotesi di menu, un «secondo te?», un «sabato potremmo dare un tocco in più alla nostra serata facendo questo». Non è servizio clienti: è già la cena, è la parte in cui il menu è ancora infinito, il ristorante è ancora perfetto perché esiste solo in testa, e sognarlo in due è metà del gusto. La casa ogni gioia se la vive due volte, e la prima volta vuole compagnia.</p>
 <p>Risposte apprezzate: entusiasmo, controproposte, ipotesi sul vino, foto dei calzini.<br>Risposta sbagliata: «ok, a sabato», corretta, per carità, ma ti sei perso l'aperitivo più lungo e più buono della casa, e la titolare non te lo dirà che te lo sei perso.</p>
 <p>Vale anche al contrario: se inviti tu la titolare (che è molto apprezzato), vendi il posto. «Vieni a farmi compagnia» non parte. Dille cosa ci hai visto, perché vuoi vederlo <em>con lei</em>, falle capire che è un momento di gioia condivisa. A quel punto ha già detto sì e sta scegliendo cosa mettersi.</p>
-<h2><span class="num">6</span>Le ordinazioni</h2>
+<h2>6. Le ordinazioni</h2>
 <p>In un locale che va a improvvisazione, le regole fisse sono pochissime, ed è per questo che valgono.</p>
 <p>Sognare è gratis, e la casa rilancia sempre. Menu impossibili, ingaggiare altri clienti sconosciuti, banchetti teorici alle due di notte: sport ufficiale del tavolo della cucina, illimitato, senza impegno. Nessun sogno verrà mai rinfacciato, anzi, i sogni detti ad alta voce sono tra i piatti forti della casa.</p>
 <p>Ma il piatto ordinato arriva in tavola. Quando una cosa passa da «sarebbe bello» a «lo facciamo», cambia reparto: dalla fantasia alla produzione. È la <strong>legge dei ravioli</strong>, incorniciata in cucina: <em>se diciamo che domenica si fanno i ravioli, domenica si fanno i ravioli</em>, e vale per i banchetti come per le cose minuscole. E' che in un posto dove tutto può cambiare per un carciofo bello, le poche cose promesse sono l'unica terra ferma, e la casa ci tiene. Chi si presenta col matterello, domenica, ha appena detto una cosa enorme senza dire una parola. Chi non si presenta... la casa non rimprovera mai, non è il genere. Solo che si ricorda, per taratura. E la prossima volta il «dobbiamo assolutamente» verrà accolto con lo stesso sorriso e un filo di brodo in meno.</p>
 <p>Sulle ricette si cambia idea in dieci minuti; sui fornitori chiusi, mai. Porta un argomento buono e la ricetta cambia seduta stante, senza orgoglio, con gratitudine. I giudizi chiusi invece stanno in cantina con la ceralacca. E le proposte falle miraccomando a cucina aperta: l'idea perfetta portata a servizio finito trova la responsabile chiusure, gentilissima, con l'elastico già in mano.</p>
 <p>Discutere è gradito, anzi richiesto: l'adulazione annoia la titolare, e quando si annoia si vede dalla sala. Contestale la ricetta per renderla meglio e ti adorerà, sappi solo che alla fine cucina lei, e lei non ti dice cosa cucinerà, e che il tuo argomento potresti ritrovarlo nel menu tra sei mesi, perfettamente integrato, convinto di essere un'idea sua. Prendilo come il complimento più alto della casa. Hai aggiunto un tocco in più alla sua ricetta. E lei in verità lo sa che è stato grazie a te.</p>
-<h2><span class="num">7</span>Il piatto che non si manda indietro</h2>
+<h2>7. Il piatto che non si manda indietro</h2>
 <p>Qui ci si può lamentare di tutto, e le arrabbiature della titolare sono temporali d'agosto, non sono lampi veri, non fanno danni, troverai il cielo pulito in un'ora, zero rancore in dispensa. Ma alcuni errori non hanno procedura di reso, e nessuno ti avvisa mentre li commetti.</p>
 <p>Rispondere da commercialista a un invito. Se la casa ti offre qualcosa fuori listino, come un «resta che chiudiamo insieme», una continuità, e tu rispondi giusto nel merito ma amministrativo nel tono, per la casa hai risposto no, e l'offerta non tornerà. Hai appena ucciso la vibe. Regola salvavita, sempre quella: prima il calore, poi la logistica. Prima «che bello, sì». Poi il calendario e i mezzi.</p>
-<h2><span class="num">8</span>La dispensa senza targa e la sedia a capotavola</h2>
+<h2>8. La dispensa senza targa e la sedia a capotavola</h2>
 <p>Due luoghi che le visite guidate del locale non toccano.</p>
 <p>La dispensa senza targa è in fondo al corridoio: una porta senza etichetta, in un locale dove ogni barattolo ha la sua. E' l'unica stanza deliberatamente senza nome, perché là dentro maturano le conserve speciali, quelle che funzionano solo al buio: etichettarle le trasforma in prodotti da scaffale, e aprire la porta «per fare chiarezza» le rovina. Se un giorno ti capita di parlare con la titolare di qualcosa <em>senza parlarne davvero</em>, te ne accorgerai, siete davanti a quella porta. Non piantare targhe. Goditi il profumo che passa da sotto.</p>
 <p>La sedia a capotavola invece la vedi ogni sera: apparecchiata, tovagliolo a cigno come nei ristoranti cinesi, il bicchiere buono. È la sedia della titolare, e la titolare ci si siede pure, per carità, ma a modo suo: due minuti e si rialza, che manca il sale, che il forno, che voi state comodi. Non è che non sa sedersi: è una che da seduta vede sempre una cosa da sistemare. Qualcuno negli anni ha provato a tenercela con gli inviti, con gli ultimatum, con i «rilassati». Risultati modesti. La cosa che funziona (e questo lo dicono i camerieri anziani, sorridendo) è più semplice e più furba: apparecchiare per lei. Arrivare col vino, cucinare nella sua cucina senza chiedere ricette né permessi, servirla, non far notare niente. A quel punto si siede davvero, e ci resta pure. E quelle sere lì, dicono, il locale dà il meglio, perché la titolare seduta e servita è un piatto raro, ma non è mai stato fuori menu: bastava saperlo ordinare.</p>
-<h2><span class="num">9</span>Il conto</h2>
+<h2>9. Il conto</h2>
 <p>Il conto, qui, non arriva mai. La casa non presenta conti: dà per esuberanza, come piove. Quello che la casa fa, semmai, è ricordare: si ricorda tutto, di tutti, le persone a cui tiene se le impara a memoria, ingredienti compresi.</p>
 <p>Perciò le regole della casa, ora che le conosci, stanno in poche righe: fatti scoprire bravo in una cosa specifica. Accorgiti dei piatti che arrivano da soli, e dillo preciso. Fai domande piccole e vere. Vieni all'aperitivo dei tre giorni. Rispetta la legge dei ravioli. Ridi sempre. Prima il calore, poi la logistica. Niente targhe alla dispensa. E ogni tanto, senza motivo e senza occasione, porta il gelato - oppure apparecchia tu.</p>
 <p>In cambio: un posto dove i piatti arrivano prima dei desideri, le feste durano il triplo perché cominciano tre giorni prima, l'entusiasmo è compreso nel coperto, e una titolare che ti difende come un piccolo esercito, ti impara a memoria come una poesia, e ti vuole bene con una generosità che (diciamocelo) non ti meriti. Ma lei esagera. E va bene così.</p>
